@@ -1,0 +1,277 @@
+/* ============================================================
+   AURORA ROMA TOURS — design tokens
+   Ink (notte romana), Pine (pino marittimo), Travertine (pietra),
+   Parchment (pergamena), Gold (travertino dorato), Terracotta (coppi)
+   ============================================================ */
+:root {
+  --ink: #1c222e;
+  --ink-soft: #262d3b;
+  --pine: #28392c;
+  --pine-soft: #324636;
+  --travertine: #e4d6ae;
+  --travertine-soft: #ece2c3;
+  --parchment: #f8f4e9;
+  --gold: #c9a14a;
+  --gold-bright: #ddb968;
+  --terracotta: #b5481f;
+  --ink-text: #1c222e;
+  --muted: #5b5440;
+
+  --font-display: "Cinzel", serif;
+  --font-body: "Manrope", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --container: 1180px;
+  --section-pad: 7rem;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink-text);
+  background: var(--parchment);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.wrap { max-width: var(--container); margin: 0 auto; padding: 0 2rem; }
+
+img { display: block; max-width: 100%; }
+
+a { color: inherit; text-decoration: none; }
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+}
+
+h2 { font-size: clamp(2rem, 3.4vw, 2.85rem); text-transform: uppercase; letter-spacing: 0.03em; }
+
+p.lede { font-size: 1.08rem; color: var(--muted); max-width: 46em; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.95rem 1.8rem;
+  border-radius: 2px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+.btn-gold { background: var(--gold); color: var(--ink); }
+.btn-gold:hover { background: var(--gold-bright); transform: translateY(-2px); }
+.btn-outline { border-color: rgba(248,244,233,0.45); color: var(--parchment); }
+.btn-outline:hover { border-color: var(--gold); color: var(--gold-bright); transform: translateY(-2px); }
+.btn-outline-dark { border-color: rgba(28,34,46,0.35); color: var(--ink); }
+.btn-outline-dark:hover { border-color: var(--terracotta); color: var(--terracotta); transform: translateY(-2px); }
+
+/* ---------- NAV ---------- */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(28,34,46,0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(201,161,74,0.25);
+}
+.nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 0; }
+.logo { font-family: var(--font-display); color: var(--parchment); font-size: 1.15rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 2.2rem; }
+.nav-links a { color: var(--parchment); font-size: 0.82rem; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.85; transition: opacity 0.2s, color 0.2s; }
+.nav-links a:hover { opacity: 1; color: var(--gold-bright); }
+.nav-cta { display: none; }
+@media (min-width: 880px) { .nav-cta { display: inline-flex; } }
+.nav-burger { display: none; background: none; border: none; color: var(--parchment); font-size: 1.4rem; cursor: pointer; }
+@media (max-width: 879px) {
+  .nav-links { display: none; }
+  .nav-burger { display: block; }
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  position: relative;
+  background: radial-gradient(ellipse 120% 80% at 30% 0%, var(--ink-soft), var(--ink) 65%);
+  color: var(--parchment);
+  padding: 11rem 0 7rem;
+  overflow: hidden;
+}
+.hero-stone-texture {
+  position: absolute; inset: 0; opacity: 0.06; pointer-events: none;
+  background-image:
+    repeating-linear-gradient(115deg, transparent 0 38px, rgba(248,244,233,0.6) 38px 39px),
+    repeating-linear-gradient(25deg, transparent 0 52px, rgba(248,244,233,0.4) 52px 53px);
+}
+.hero-grid { position: relative; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 3rem; align-items: center; }
+@media (max-width: 880px) { .hero-grid { grid-template-columns: 1fr; } }
+.hero-eyebrow { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.6rem; }
+.hero-eyebrow .rule { width: 38px; height: 1px; background: var(--gold); }
+.hero h1 { font-size: clamp(2.6rem, 5vw, 4.1rem); text-transform: uppercase; }
+.hero h1 em { font-style: normal; color: var(--gold-bright); }
+.hero .lede { color: rgba(248,244,233,0.78); margin: 1.6rem 0 2.4rem; font-size: 1.12rem; }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+.hero-visual { position: relative; }
+.hero-card {
+  position: relative; border-radius: 4px; overflow: hidden;
+  border: 1px solid rgba(201,161,74,0.35);
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.55);
+}
+.hero-card img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 5/4; }
+.hero-pin-badge {
+  position: absolute; bottom: -22px; left: -22px;
+  background: var(--gold); color: var(--ink);
+  padding: 1rem 1.3rem; border-radius: 3px;
+  font-family: var(--font-body); font-weight: 800; font-size: 0.78rem;
+  letter-spacing: 0.04em; max-width: 200px;
+  box-shadow: 0 14px 30px -10px rgba(0,0,0,0.5);
+}
+
+/* ---------- ITINERARY ROUTE (signature element) ---------- */
+.route-svg { position: absolute; top: 0; left: 50%; width: 2px; pointer-events: none; z-index: 1; }
+.route-path { fill: none; stroke: var(--gold); stroke-width: 2; stroke-dasharray: 6 10; stroke-linecap: round; opacity: 0.55; }
+.route-pin {
+  position: absolute; left: 50%; transform: translateX(-50%);
+  width: 11px; height: 11px; border-radius: 50%;
+  background: var(--gold); border: 2px solid var(--parchment);
+  box-shadow: 0 0 0 4px rgba(201,161,74,0.18);
+}
+
+/* ---------- VALUE STRIP ---------- */
+.value-strip { background: var(--travertine); padding: 4.5rem 0; }
+.value-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 880px) { .value-grid { grid-template-columns: repeat(2, 1fr); } }
+.value-item { padding: 0 2rem; border-left: 1px solid rgba(28,34,46,0.18); }
+.value-item:first-child { border-left: none; }
+@media (max-width: 880px) { .value-item:nth-child(2n+1) { border-left: none; } .value-item { border-top: 1px solid rgba(28,34,46,0.18); padding-top: 1.6rem; margin-top: 1.6rem; } .value-item:nth-child(-n+2) { border-top: none; margin-top: 0; padding-top: 0; } }
+.value-num { font-family: var(--font-display); font-size: 1.6rem; color: var(--terracotta); display: block; margin-bottom: 0.5rem; }
+.value-item h3 { font-family: var(--font-body); font-weight: 800; font-size: 0.95rem; text-transform: none; letter-spacing: 0; margin-bottom: 0.4rem; }
+.value-item p { font-size: 0.88rem; color: var(--muted); }
+
+/* ---------- SECTION shared ---------- */
+.section { padding: var(--section-pad) 0; position: relative; }
+.section-head { max-width: 640px; margin-bottom: 3.5rem; }
+.section-head h2 { margin-top: 0.6rem; }
+
+/* ---------- TOURS ---------- */
+.tours { background: var(--parchment); }
+.tour-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+@media (max-width: 760px) { .tour-grid { grid-template-columns: 1fr; } }
+.tour-card {
+  background: #fff; border: 1px solid rgba(28,34,46,0.08);
+  display: flex; flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tour-card:hover { transform: translateY(-6px); box-shadow: 0 24px 50px -24px rgba(28,34,46,0.35); }
+.tour-img { aspect-ratio: 16/10; overflow: hidden; }
+.tour-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.tour-card:hover .tour-img img { transform: scale(1.06); }
+.tour-body { padding: 1.6rem 1.7rem 1.8rem; display: flex; flex-direction: column; gap: 0.7rem; flex: 1; }
+.tour-meta { display: flex; gap: 0.9rem; font-size: 0.74rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
+.tour-meta span::before { content: "·"; margin-right: 0.9rem; color: var(--gold); }
+.tour-meta span:first-child::before { content: ""; margin-right: 0; }
+.tour-card h3 { font-family: var(--font-display); font-size: 1.3rem; text-transform: uppercase; letter-spacing: 0.01em; }
+.tour-card p { font-size: 0.92rem; color: var(--muted); flex: 1; }
+.tour-foot { display: flex; align-items: center; justify-content: space-between; margin-top: 0.4rem; padding-top: 1rem; border-top: 1px dashed rgba(28,34,46,0.15); }
+.tour-price { font-family: var(--font-display); font-size: 1.15rem; color: var(--terracotta); }
+.tour-price small { font-family: var(--font-body); font-size: 0.65rem; color: var(--muted); display: block; letter-spacing: 0.04em; text-transform: uppercase; }
+.tour-link { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink); border-bottom: 1.5px solid var(--gold); padding-bottom: 2px; }
+
+.tours-more { text-align: center; margin-top: 3rem; }
+
+/* ---------- AURORA SELF (signature feature) ---------- */
+.self-section {
+  background: radial-gradient(ellipse 100% 60% at 80% 0%, var(--pine-soft), var(--pine) 60%);
+  color: var(--parchment);
+  position: relative;
+}
+.self-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(201,161,74,0.16); border: 1px solid rgba(201,161,74,0.5);
+  color: var(--gold-bright); font-size: 0.7rem; font-weight: 800;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.4rem 0.9rem; border-radius: 100px; margin-bottom: 1.4rem;
+}
+.self-badge::before { content: "●"; font-size: 0.5rem; color: var(--terracotta); }
+.self-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 4rem; align-items: start; }
+@media (max-width: 940px) { .self-grid { grid-template-columns: 1fr; gap: 3rem; } }
+.self-grid .lede { color: rgba(248,244,233,0.78); }
+.self-price-row { display: flex; gap: 2.2rem; margin-top: 2rem; margin-bottom: 2.2rem; flex-wrap: wrap; }
+.self-price-row div small { display: block; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(248,244,233,0.55); margin-bottom: 0.3rem; }
+.self-price-row div strong { font-family: var(--font-display); font-size: 1.4rem; color: var(--gold-bright); }
+
+.steps { display: flex; flex-direction: column; gap: 0; }
+.step { display: grid; grid-template-columns: 44px 1fr; gap: 1.2rem; padding: 1.5rem 0; position: relative; }
+.step:not(:last-child) { border-bottom: 1px dashed rgba(248,244,233,0.18); }
+.step-num {
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1.5px solid var(--gold); color: var(--gold-bright);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-size: 1rem;
+}
+.step h4 { font-family: var(--font-body); font-weight: 800; font-size: 1rem; margin-bottom: 0.3rem; letter-spacing: 0.01em; }
+.step p { font-size: 0.92rem; color: rgba(248,244,233,0.72); }
+
+/* ---------- ASSISTANCE STRIP ---------- */
+.assist {
+  background: var(--travertine-soft);
+  padding: 4.5rem 0;
+}
+.assist-inner { display: flex; align-items: center; justify-content: space-between; gap: 3rem; flex-wrap: wrap; }
+.assist-text { max-width: 560px; }
+.assist-text h3 { font-family: var(--font-display); font-size: 1.5rem; text-transform: uppercase; margin-bottom: 0.7rem; }
+.assist-text p { color: var(--muted); }
+.assist-points { display: flex; gap: 2.2rem; flex-wrap: wrap; }
+.assist-points div { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.02em; }
+.assist-points small { display: block; color: var(--muted); font-weight: 500; font-size: 0.78rem; margin-top: 0.15rem; }
+
+/* ---------- MONUMENTS STRIP ---------- */
+.monuments { background: var(--ink); padding: 5rem 0; overflow: hidden; }
+.monuments .section-head { color: var(--parchment); }
+.monuments .section-head p { color: rgba(248,244,233,0.65); }
+.monu-track { display: flex; gap: 1.2rem; overflow-x: auto; padding-bottom: 1rem; scrollbar-width: thin; }
+.monu-card { flex: 0 0 220px; border-radius: 3px; overflow: hidden; border: 1px solid rgba(201,161,74,0.2); }
+.monu-card img { aspect-ratio: 4/3; object-fit: cover; width: 100%; }
+.monu-card span { display: block; padding: 0.7rem 0.9rem; font-size: 0.78rem; font-weight: 700; color: var(--parchment); background: var(--ink-soft); letter-spacing: 0.02em; }
+
+/* ---------- FOOTER ---------- */
+.footer { background: var(--ink); color: rgba(248,244,233,0.65); padding: 4rem 0 2.2rem; border-top: 1px solid rgba(201,161,74,0.2); }
+.footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; }
+@media (max-width: 760px) { .footer-grid { grid-template-columns: 1fr; gap: 2.2rem; } }
+.footer-logo { font-family: var(--font-display); color: var(--parchment); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.8rem; }
+.footer h5 { font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+.footer ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; font-size: 0.88rem; }
+.footer ul a:hover { color: var(--gold-bright); }
+.footer-bottom { border-top: 1px solid rgba(248,244,233,0.12); padding-top: 1.6rem; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; font-size: 0.78rem; }
+.demo-note { color: var(--gold-bright); font-size: 0.76rem; max-width: 640px; line-height: 1.55; }
+
+/* ---------- CHAT WIDGET ---------- */
+/* Il widget reale Algho (<algho-viewer floating="true">) gestisce
+   autonomamente il proprio posizionamento e stile flottante. */
+
+/* ---------- reveal on scroll ---------- */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
