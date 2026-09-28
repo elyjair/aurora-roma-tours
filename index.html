@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Aurora Roma Tours — Tours, experiences and itineraries in Rome</title>
-<meta name="description" content="Guided tours, experiences and the Aurora Roma Self self-guided tour: discover Rome with Aurora Roma Tours, assisted by our virtual agent." />
+<title>Aurora Roma Tours — Tour, esperienze e itinerari a Roma</title>
+<meta name="description" content="Tour guidati, esperienze e il tour self-guidato Aurora Roma Self: scopri Roma con Aurora Roma Tours, assistiti dal nostro agente virtuale." />
+<link rel="alternate" hreflang="it" href="?lang=it" />
+<link rel="alternate" hreflang="en" href="?lang=en" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -16,13 +18,19 @@
   <div class="wrap nav-inner">
     <div class="logo">Aurora <span>Roma</span> Tours</div>
     <div class="nav-links">
-      <a href="#tour">Tours</a>
+      <a href="#tour" data-i18n="nav.tour">Tour</a>
       <a href="#aurora-self">Aurora Self</a>
-      <a href="#monumenti">Monuments</a>
-      <a href="#assistenza">Support</a>
+      <a href="#monumenti" data-i18n="nav.monuments">Monumenti</a>
+      <a href="#assistenza" data-i18n="nav.support">Assistenza</a>
     </div>
-    <a href="#assistenza" class="btn btn-outline nav-cta">Contact us</a>
-    <button class="nav-burger" aria-label="Menu">☰</button>
+    <div class="nav-actions">
+      <div class="lang-switch" role="group" aria-label="Lingua / Language">
+        <button type="button" class="lang-btn" data-lang="it" aria-pressed="true" lang="it">IT</button>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false" lang="en">EN</button>
+      </div>
+      <a href="#assistenza" class="btn btn-outline nav-cta" data-i18n="nav.cta">Scrivici</a>
+      <button class="nav-burger" aria-label="Menu">☰</button>
+    </div>
   </div>
 </nav>
 
@@ -31,19 +39,19 @@
   <div class="hero-stone-texture"></div>
   <div class="wrap hero-grid">
     <div>
-      <div class="hero-eyebrow"><span class="rule"></span><span class="eyebrow">Rome, your way</span></div>
-      <h1>Every stone<br>has a <em>story</em><br>to tell you</h1>
-      <p class="lede">Skip-the-line guided tours, tailor-made experiences and our self-guided itinerary Aurora Roma Self: snap a photo of a monument and we&apos;ll tell you its story, in real time, wherever you are in the city.</p>
+      <div class="hero-eyebrow"><span class="rule"></span><span class="eyebrow" data-i18n="hero.eyebrow">Roma, a modo tuo</span></div>
+      <h1 data-i18n="hero.title">Ogni pietra<br>ha una <em>storia</em><br>da raccontarti</h1>
+      <p class="lede" data-i18n="hero.lede">Tour guidati skip-the-line, esperienze su misura e il nostro itinerario self-guidato Aurora Roma Self: fotografi un monumento, ti raccontiamo la sua storia, in tempo reale, ovunque tu sia in città.</p>
       <div class="hero-ctas">
-        <a href="#tour" class="btn btn-gold">Discover the tours</a>
-        <a href="#aurora-self" class="btn btn-outline">How Aurora Self works</a>
+        <a href="#tour" class="btn btn-gold" data-i18n="hero.cta1">Scopri i tour</a>
+        <a href="#aurora-self" class="btn btn-outline" data-i18n="hero.cta2">Come funziona Aurora Self</a>
       </div>
     </div>
     <div class="hero-visual">
       <div class="hero-card">
-        <img src="assets/colosseo.png" alt="Illustration of the Colosseum" />
+        <img src="assets/colosseo.png" alt="Illustrazione del Colosseo" data-i18n-alt="hero.imgAlt" />
       </div>
-      <div class="hero-pin-badge">📍 More than 50 places and monuments told in real time</div>
+      <div class="hero-pin-badge" data-i18n="hero.badge">📍 Più di 50 luoghi e monumenti raccontati in tempo reale</div>
     </div>
   </div>
 </header>
@@ -54,22 +62,22 @@
     <div class="value-item reveal">
       <span class="value-num">I</span>
       <h3>Skip-the-line</h3>
-      <p>Priority access to the most popular sites, no queuing in the sun.</p>
+      <p data-i18n="value.1.text">Accesso prioritario ai luoghi più richiesti, niente file sotto il sole.</p>
     </div>
     <div class="value-item reveal">
       <span class="value-num">II</span>
-      <h3>WhatsApp support</h3>
-      <p>Vouchers, payments, meeting point: we reply right away, even while you travel.</p>
+      <h3 data-i18n="value.2.title">Assistenza su WhatsApp</h3>
+      <p data-i18n="value.2.text">Voucher, pagamenti, punto di ritrovo: rispondiamo subito, anche in viaggio.</p>
     </div>
     <div class="value-item reveal">
       <span class="value-num">III</span>
-      <h3>Expert guides</h3>
-      <p>Carefully crafted stories, never recited: real history, real anecdotes.</p>
+      <h3 data-i18n="value.3.title">Guide esperte</h3>
+      <p data-i18n="value.3.text">Racconti curati, mai recitati: storia vera, aneddoti veri.</p>
     </div>
     <div class="value-item reveal">
       <span class="value-num">IV</span>
-      <h3>Free to explore</h3>
-      <p>With Aurora Self, you set the pace of the tour, monument after monument.</p>
+      <h3 data-i18n="value.4.title">Liberi di esplorare</h3>
+      <p data-i18n="value.4.text">Con Aurora Self, il ritmo del tour lo decidi tu, monumento dopo monumento.</p>
     </div>
   </div>
 </section>
@@ -78,47 +86,47 @@
 <section class="section tours" id="tour">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Catalogue</span>
-      <h2>Our tours</h2>
-      <p class="lede">From the great classics to evening experiences, every itinerary is led by people who live Rome every day.</p>
+      <span class="eyebrow" data-i18n="tours.eyebrow">Catalogo</span>
+      <h2 data-i18n="tours.title">I nostri tour</h2>
+      <p class="lede" data-i18n="tours.lede">Dai grandi classici alle esperienze serali, ogni itinerario è guidato da chi Roma la vive ogni giorno.</p>
     </div>
 
     <div class="tour-grid">
       <article class="tour-card reveal">
-        <div class="tour-img"><img src="assets/colosseo.png" alt="Colosseum"></div>
+        <div class="tour-img"><img src="assets/colosseo.png" alt="Colosseo" data-i18n-alt="monu.colosseum"></div>
         <div class="tour-body">
-          <div class="tour-meta"><span>3 hours</span><span>Skip-the-line</span><span>IT · EN</span></div>
-          <h3>Colosseum, Roman Forum and Palatine Hill</h3>
-          <p>The gladiators&apos; arena, the political heart of ancient Rome and the imperial residences, all in one queue-free tour.</p>
+          <div class="tour-meta"><span data-i18n="meta.3h">3 ore</span><span>Skip-the-line</span><span>IT · EN</span></div>
+          <h3 data-i18n="tour.1.title">Colosseo, Foro Romano e Palatino</h3>
+          <p data-i18n="tour.1.text">L'Arena dei gladiatori, il cuore politico dell'antica Roma e le residenze imperiali, in un solo percorso senza code.</p>
           <div class="tour-foot">
-            <div class="tour-price"><small>From</small>€ 59</div>
-            <a href="#assistenza" class="tour-link">Request info →</a>
+            <div class="tour-price"><small data-i18n="tour.from">Da</small>€ 59</div>
+            <a href="#assistenza" class="tour-link" data-i18n="tour.info">Richiedi info →</a>
           </div>
         </div>
       </article>
 
       <article class="tour-card reveal">
-        <div class="tour-img"><img src="assets/san_pietro.png" alt="St. Peter's Basilica"></div>
+        <div class="tour-img"><img src="assets/san_pietro.png" alt="Basilica di San Pietro" data-i18n-alt="monu.stpeter"></div>
         <div class="tour-body">
           <div class="tour-meta"><span>3h 30</span><span>Skip-the-line</span><span>IT · EN · ES</span></div>
-          <h3>Vatican Museums and St. Peter&apos;s Basilica</h3>
-          <p>The Sistine Chapel, timeless masterpieces and the majesty of the largest Christian church in the world.</p>
+          <h3 data-i18n="tour.2.title">Musei Vaticani e Basilica di San Pietro</h3>
+          <p data-i18n="tour.2.text">Cappella Sistina, capolavori senza tempo e la maestosità della più grande chiesa cristiana del mondo.</p>
           <div class="tour-foot">
-            <div class="tour-price"><small>From</small>€ 65</div>
-            <a href="#assistenza" class="tour-link">Request info →</a>
+            <div class="tour-price"><small data-i18n="tour.from">Da</small>€ 65</div>
+            <a href="#assistenza" class="tour-link" data-i18n="tour.info">Richiedi info →</a>
           </div>
         </div>
       </article>
 
       <article class="tour-card reveal">
-        <div class="tour-img"><img src="assets/fontana_trevi.png" alt="Trevi Fountain"></div>
+        <div class="tour-img"><img src="assets/fontana_trevi.png" alt="Fontana di Trevi" data-i18n-alt="monu.trevi"></div>
         <div class="tour-body">
-          <div class="tour-meta"><span>2 hours</span><span>Walking</span><span>IT · EN</span></div>
-          <h3>Baroque Rome on Foot</h3>
-          <p>The Pantheon, Piazza Navona and the Trevi Fountain: the Rome of monumental fountains, full of anecdotes and legends.</p>
+          <div class="tour-meta"><span data-i18n="meta.2h">2 ore</span><span data-i18n="meta.walking">A piedi</span><span>IT · EN</span></div>
+          <h3 data-i18n="tour.3.title">Roma Barocca a piedi</h3>
+          <p data-i18n="tour.3.text">Pantheon, Piazza Navona e Fontana di Trevi: la Roma delle fontane monumentali, tra aneddoti e leggende.</p>
           <div class="tour-foot">
-            <div class="tour-price"><small>From</small>€ 25</div>
-            <a href="#assistenza" class="tour-link">Request info →</a>
+            <div class="tour-price"><small data-i18n="tour.from">Da</small>€ 25</div>
+            <a href="#assistenza" class="tour-link" data-i18n="tour.info">Richiedi info →</a>
           </div>
         </div>
       </article>
@@ -126,19 +134,19 @@
       <article class="tour-card reveal">
         <div class="tour-img"><img src="assets/piazza_trastevere.png" onerror="this.src='assets/piazza_navona.png'" alt="Trastevere"></div>
         <div class="tour-body">
-          <div class="tour-meta"><span>3 hours</span><span>Evening</span><span>IT · EN</span></div>
+          <div class="tour-meta"><span data-i18n="meta.3h">3 ore</span><span data-i18n="meta.evening">Serale</span><span>IT · EN</span></div>
           <h3>Trastevere by Night — Food Tour</h3>
-          <p>Four stops among historic trattorias and local shops, in Rome&apos;s most authentic neighbourhood.</p>
+          <p data-i18n="tour.4.text">Quattro tappe tra trattorie storiche e botteghe, nel quartiere più autentico di Roma.</p>
           <div class="tour-foot">
-            <div class="tour-price"><small>From</small>€ 69</div>
-            <a href="#assistenza" class="tour-link">Request info →</a>
+            <div class="tour-price"><small data-i18n="tour.from">Da</small>€ 69</div>
+            <a href="#assistenza" class="tour-link" data-i18n="tour.info">Richiedi info →</a>
           </div>
         </div>
       </article>
     </div>
 
     <div class="tours-more reveal">
-      <a href="#assistenza" class="btn btn-outline-dark">See all tours and experiences</a>
+      <a href="#assistenza" class="btn btn-outline-dark" data-i18n="tours.more">Vedi tutti i tour e le esperienze</a>
     </div>
   </div>
 </section>
@@ -147,71 +155,71 @@
 <section class="section self-section" id="aurora-self">
   <div class="wrap self-grid">
     <div class="reveal">
-      <span class="self-badge">Tech preview</span>
-      <span class="eyebrow">The tour that adapts to you</span>
+      <span class="self-badge" data-i18n="self.badge">Anteprima tecnologica</span>
+      <span class="eyebrow" data-i18n="self.eyebrow">Il tour che si adatta a te</span>
       <h2 style="margin-top:0.6rem;">Aurora Roma Self</h2>
-      <p class="lede">No groups, no fixed schedules. Walk around Rome at your own pace: in front of every monument, take a photo and instantly receive its story, straight to WhatsApp.</p>
+      <p class="lede" data-i18n="self.lede">Niente gruppi, niente orari fissi. Cammina per Roma al tuo ritmo: davanti a ogni monumento, scatta una foto e ricevi all'istante la sua storia, direttamente su WhatsApp.</p>
 
       <div class="self-price-row">
-        <div><small>Duration</small><strong>Flexible</strong></div>
-        <div><small>Price</small><strong>€ 15 per person</strong></div>
-        <div><small>Meeting point</small><strong>None</strong></div>
+        <div><small data-i18n="self.duration">Durata</small><strong data-i18n="self.durationVal">Libera</strong></div>
+        <div><small data-i18n="self.price">Prezzo</small><strong data-i18n="self.priceVal">€ 15 a persona</strong></div>
+        <div><small data-i18n="self.meeting">Punto di ritrovo</small><strong data-i18n="self.meetingVal">Nessuno</strong></div>
       </div>
 
-      <a href="#assistenza" class="btn btn-gold">Try Aurora Self</a>
+      <a href="#assistenza" class="btn btn-gold" data-i18n="self.cta">Prova Aurora Self</a>
     </div>
 
     <div class="reveal">
       <div class="steps">
         <div class="step">
           <div class="step-num">1</div>
-          <div><h4>Get your itinerary</h4><p>After purchase, you&apos;ll receive a digital voucher on WhatsApp with a suggested route: follow it or explore your own way.</p></div>
+          <div><h4 data-i18n="step.1.title">Ricevi l'itinerario</h4><p data-i18n="step.1.text">Dopo l'acquisto, ricevi su WhatsApp un voucher digitale con un percorso suggerito, libero di seguirlo o di esplorare a modo tuo.</p></div>
         </div>
         <div class="step">
           <div class="step-num">2</div>
-          <div><h4>Take a photo</h4><p>In front of a monument, a fountain or a square, snap a photo and send it in the chat to Aurora, our virtual assistant.</p></div>
+          <div><h4 data-i18n="step.2.title">Scatta una foto</h4><p data-i18n="step.2.text">Davanti a un monumento, una fontana o una piazza, fotografala e inviala in chat ad Aurora, il nostro assistente virtuale.</p></div>
         </div>
         <div class="step">
           <div class="step-num">3</div>
-          <div><h4>Get the story</h4><p>Within seconds you&apos;ll receive the history, fun facts and historical period of the place, plus a suggestion for your next stop.</p></div>
+          <div><h4 data-i18n="step.3.title">Ricevi la storia</h4><p data-i18n="step.3.text">In pochi secondi ricevi storia, curiosità e periodo storico del luogo, più un suggerimento per la tappa successiva.</p></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== MONUMENTS STRIP ===================== -->
+<!-- ===================== MONUMENTI STRIP ===================== -->
 <section class="monuments" id="monumenti">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Aurora&apos;s archive</span>
-      <h2 style="color:var(--parchment)">Over 50 places, told</h2>
-      <p>From the Colosseum to the alleys of Trastevere, all the way to the Appian Way: the archive that powers Aurora Self&apos;s photo recognition.</p>
+      <span class="eyebrow" data-i18n="monu.eyebrow">L'archivio di Aurora</span>
+      <h2 style="color:var(--parchment)" data-i18n="monu.title">Oltre 50 luoghi raccontati</h2>
+      <p data-i18n="monu.text">Dal Colosseo ai vicoli di Trastevere, fino all'Appia Antica: l'archivio che alimenta il riconoscimento fotografico di Aurora Self.</p>
     </div>
     <div class="monu-track">
-      <div class="monu-card"><img src="assets/colosseo.png" alt="Colosseum"><span>Colosseum</span></div>
+      <div class="monu-card"><img src="assets/colosseo.png" alt="Colosseo" data-i18n-alt="monu.colosseum"><span data-i18n="monu.colosseum">Colosseo</span></div>
       <div class="monu-card"><img src="assets/pantheon.png" alt="Pantheon"><span>Pantheon</span></div>
-      <div class="monu-card"><img src="assets/fontana_trevi.png" alt="Trevi Fountain"><span>Trevi Fountain</span></div>
+      <div class="monu-card"><img src="assets/fontana_trevi.png" alt="Fontana di Trevi" data-i18n-alt="monu.trevi"><span data-i18n="monu.trevi">Fontana di Trevi</span></div>
       <div class="monu-card"><img src="assets/piazza_navona.png" alt="Piazza Navona"><span>Piazza Navona</span></div>
-      <div class="monu-card"><img src="assets/san_pietro.png" alt="St. Peter's Basilica"><span>St. Peter&apos;s Basilica</span></div>
-      <div class="monu-card"><img src="assets/castel_santangelo.png" alt="Castel Sant'Angelo"><span>Castel Sant&apos;Angelo</span></div>
-      <div class="monu-card"><img src="assets/piramide_cestia.png" alt="Pyramid of Cestius"><span>Pyramid of Cestius</span></div>
-      <div class="monu-card"><img src="assets/appia_antica.png" alt="Appian Way"><span>Appian Way</span></div>
+      <div class="monu-card"><img src="assets/san_pietro.png" alt="Basilica di San Pietro" data-i18n-alt="monu.stpeter"><span data-i18n="monu.stpeter">Basilica di San Pietro</span></div>
+      <div class="monu-card"><img src="assets/castel_santangelo.png" alt="Castel Sant'Angelo"><span>Castel Sant'Angelo</span></div>
+      <div class="monu-card"><img src="assets/piramide_cestia.png" alt="Piramide Cestia" data-i18n-alt="monu.cestius"><span data-i18n="monu.cestius">Piramide Cestia</span></div>
+      <div class="monu-card"><img src="assets/appia_antica.png" alt="Via Appia Antica" data-i18n-alt="monu.appia"><span data-i18n="monu.appia">Via Appia Antica</span></div>
     </div>
   </div>
 </section>
 
-<!-- ===================== SUPPORT ===================== -->
+<!-- ===================== ASSISTENZA ===================== -->
 <section class="assist" id="assistenza">
   <div class="wrap assist-inner">
     <div class="assist-text reveal">
-      <h3>Have a question about an order?</h3>
-      <p>Vouchers, payments, date changes: message us in the chat or on WhatsApp, we&apos;ll reply right away.</p>
+      <h3 data-i18n="assist.title">Hai un dubbio su un ordine?</h3>
+      <p data-i18n="assist.text">Voucher, pagamenti, cambio data: scrivici in chat o su WhatsApp, ti rispondiamo subito.</p>
     </div>
     <div class="assist-points reveal">
-      <div>Voucher not received<small>Checked and resent within 24h</small></div>
-      <div>Payment issues<small>Checked and refunded within 10 days</small></div>
-      <div>Date change<small>Free up to 48h before</small></div>
+      <div data-i18n="assist.1">Voucher non ricevuto<small>Verifica e reinvio in 24h</small></div>
+      <div data-i18n="assist.2">Problemi di pagamento<small>Verifica e rimborso entro 10gg</small></div>
+      <div data-i18n="assist.3">Cambio data<small>Gratuito fino a 48h prima</small></div>
     </div>
   </div>
 </section>
@@ -222,28 +230,28 @@
     <div class="footer-grid">
       <div>
         <div class="footer-logo">Aurora Roma Tours</div>
-        <p style="max-width:30ch; font-size:0.88rem;">Tours, experiences and itineraries in Rome, told by people who live the city every day.</p>
+        <p style="max-width:30ch; font-size:0.88rem;" data-i18n="footer.tagline">Tour, esperienze e itinerari a Roma, raccontati da chi la città la vive ogni giorno.</p>
       </div>
       <div>
-        <h5>Explore</h5>
+        <h5 data-i18n="footer.explore">Esplora</h5>
         <ul>
-          <li><a href="#tour">Guided tours</a></li>
+          <li><a href="#tour" data-i18n="footer.tours">Tour guidati</a></li>
           <li><a href="#aurora-self">Aurora Roma Self</a></li>
-          <li><a href="#monumenti">Monument archive</a></li>
+          <li><a href="#monumenti" data-i18n="footer.archive">Archivio monumenti</a></li>
         </ul>
       </div>
       <div>
-        <h5>Support</h5>
+        <h5 data-i18n="nav.support">Assistenza</h5>
         <ul>
-          <li><a href="#assistenza">Chat with us</a></li>
+          <li><a href="#assistenza" data-i18n="footer.chat">Scrivici in chat</a></li>
           <li><a href="#assistenza">WhatsApp</a></li>
-          <li><a href="#assistenza">Terms of sale</a></li>
+          <li><a href="#assistenza" data-i18n="footer.terms">Condizioni di vendita</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Aurora Roma Tours</span>
-      <span class="demo-note">Aurora Roma Tours is a fictional brand created for demo purposes for the Algho Customer Experience package (Vection Technologies). It does not represent a real business.</span>
+      <span class="demo-note" data-i18n="footer.demo">Aurora Roma Tours è un brand dimostrativo creato a scopo di demo per il pacchetto Algho Customer Experience (Vection Technologies). Non rappresenta un'attività commerciale reale.</span>
     </div>
   </div>
 </footer>
