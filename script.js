@@ -20,11 +20,11 @@
 })();
 
 // ===== Chat widget =====
-// Il widget reale Algho (<algho-viewer floating="true">) si monta da solo
-// sul <body> ed è gestito dallo script inline in index.html: non serve
-// alcuna logica aggiuntiva qui.
+// The Algho widget (<algho-viewer floating="true">) mounts itself on
+// <body> and is handled by the inline script in index.html, so no extra
+// logic is needed here.
 
-// ===== Mobile nav burger (semplice toggle) =====
+// ===== Mobile nav burger (simple toggle) =====
 (function () {
   const burger = document.querySelector('.nav-burger');
   const links = document.querySelector('.nav-links');
